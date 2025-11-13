@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Futurista</title>
+    <style>
+        /* --- Fondo y estilo general --- */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #0a0f1f, #020611);
+            font-family: 'Poppins', sans-serif;
+            color: #e0e0e0;
+        }
+
+        .calculadora {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 320px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .calculadora:hover {
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        input[type="text"], select {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #00ffff;
+            font-size: 1em;
+            text-align: center;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus, select:focus {
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        input[disabled] {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            color: #00ffff;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #00ffff, #0077ff);
+            color: #0a0f1f;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px #00ffff;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <h1>CALCULADORA</h1>
+
+        <input type="text" disabled value="{{result}}" placeholder="Resultado">
+
+        <form action="/calcular" method="post">
+            <input type="text" name="num1" placeholder="Número 1">
+            <input type="text" name="num2" placeholder="Número 2">
+
+            <select name="op">
+                <option value="+">➕ Sumar</option>
+                <option value="-">➖ Restar</option>
+                <option value="*">✖️ Multiplicar</option>
+                <option value="/">➗ Dividir</option>
+            </select>
+
+            <button type="submit">CALCULAR</button>
+        </form>
+
+        <footer>Diseño futurista por MI</footer>
+    </div>
+</body>
+</html>
