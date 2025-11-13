@@ -1,0 +1,1 @@
+& C:/Users/alumno/AppData/Local/Programs/Python/Python313/python.exe c:/Users/alumno/Desktop/python_prac/paracticas/Fichero1.py
